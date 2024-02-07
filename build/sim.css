@@ -403,99 +403,171 @@ html {
     font-size: 4.5vw;
 }
 
+/* height constrained */
+@media (min-aspect-ratio: 17 / 20) {
+    .game-player {
+        height: 100vh;
+        width: calc((17 / 20) * 100vh);
+    }
 
-/*
-===== Landscape view
-(always height constrained)
-*/
-#wrap:not(.portrait-only) .game-player {
-    width: 100%;
-    height: 100%;
-    max-width: 300vh;
-}
+    .game-player.just-screen {
+        width: 100%;
+    }
 
-#wrap:not(.portrait-only) .game-joystick,
-#wrap:not(.portrait-only) .game-buttons {
-    width: calc((100vw - 130vh)/2);
-    height: calc((100vw - 130vh)/2);
-    max-width: 80vh;
-    max-height: 80vh;
-}
-
-#wrap:not(.portrait-only) .game-embed {
-    height: 100%;
-    max-height: 100%;
-    width: 130vh;
-    left: 0;
-    top: 0;
-    margin: auto;
-    padding: 0;
-
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-}
-
-#wrap:not(.portrait-only) #game-screen {
-    object-position: unset;
-}
-
-#wrap:not(.portrait-only) .game-player-background {
-    height: 0px;
-}
-
-#wrap:not(.portrait-only) .game-player-msft {
-    display: none;
-}
-
-#wrap:not(.portrait-only) .game-sys-button-group {
-    position: fixed;
-    flex-direction: column;
-    top: 1rem;
-    left: calc(50% + 100vh - 34vh);
-    width: 22vh;
+    html {
+        /* font-size: calc((17 / 20) * 4.5vh) */
+        /* calc + vw/vh + font-size is buggy in Safari */
+        font-size: 3.825vh;
+    }
 }
 
 /*
 ===== Landscape view
 (always height constrained)
 */
-#wrap:not(.portrait-only) .game-sys-button-group {
-    flex-direction: row;
-    left: calc(50% + 100vh - 32vh);
-    width: 26vh;
+@media (min-aspect-ratio: 5/3) and (min-width: 250px) and (min-height: 200px) {
+    #wrap:not(.portrait-only) .game-player {
+        width: 100%;
+        height: 100%;
+        max-width: 300vh;
+    }
+
+    #wrap:not(.portrait-only) .game-joystick,
+    #wrap:not(.portrait-only) .game-buttons {
+        width: calc((100vw - 130vh)/2);
+        height: calc((100vw - 130vh)/2);
+        max-width: 80vh;
+        max-height: 80vh;
+    }
+
+    #wrap:not(.portrait-only) .game-embed {
+        height: 100%;
+        max-height: 100%;
+        width: 130vh;
+        left: 0;
+        top: 0;
+        margin: auto;
+        padding: 0;
+
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+
+    #wrap:not(.portrait-only) #game-screen {
+        object-position: unset;
+    }
+
+    #wrap:not(.portrait-only) .game-player-background {
+        height: 0px;
+    }
+
+    #wrap:not(.portrait-only) .game-player-msft {
+        display: none;
+    }
+
+    #wrap:not(.portrait-only) .game-sys-button-group {
+        position: fixed;
+        flex-direction: column;
+        top: 1rem;
+        left: calc(50% + 100vh - 34vh);
+        width: 22vh;
+    }
 }
 
-
-
-/* hide controls */
-#wrap.portrait-only .game-player-msft,
-#wrap.portrait-only .game-buttons,
-#wrap.portrait-only .game-joystick,
-#wrap.portrait-only .game-sys-button {
-    display: none;
+/*
+===== Landscape view
+(always height constrained)
+*/
+@media (min-aspect-ratio: 2/1) and (min-width: 250px) and (min-height: 200px) {
+    #wrap:not(.portrait-only) .game-sys-button-group {
+        flex-direction: row;
+        left: calc(50% + 100vh - 32vh);
+        width: 26vh;
+    }
 }
 
-#wrap.portrait-only .game-embed {
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
-    flex-grow: unset;
-    padding-bottom: 0;
+@media (min-aspect-ratio: 2/1) and (max-height: 300px) {
+
+    /* hide controls */
+    #wrap.portrait-only .game-player-msft,
+    #wrap.portrait-only .game-buttons,
+    #wrap.portrait-only .game-joystick,
+    #wrap.portrait-only .game-sys-button {
+        display: none;
+    }
+
+    #wrap.portrait-only .game-embed {
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        flex-grow: unset;
+        padding-bottom: 0;
+    }
+
+    #wrap.portrait-only .game-player-background {
+        height: 0;
+    }
+
+    #wrap.portrait-only #debug-stats {
+        display: none;
+    }
+
+    #wrap.portrait-only .game-player {
+        height: 100vh;
+        width: calc((26 / 20) * 100vh);
+    }
 }
 
-#wrap.portrait-only .game-player-background {
-    height: 0;
+/*
+===== Mini view (no controls)
+*/
+@media (max-width: 250px),
+(max-height: 200px) {
+
+    /* hide controls */
+    .game-player-msft,
+    .game-buttons,
+    .game-joystick,
+    .game-sys-button {
+        display: none;
+    }
+
+    .game-embed {
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        flex-grow: unset;
+        padding-bottom: 0;
+    }
+
+    .game-player-background {
+        height: 0;
+    }
+
+    #debug-stats {
+        display: none;
+    }
+
+    /* width constrained */
+    .game-player {
+        width: 100vw;
+        height: calc((20 / 26) * 100vw);
+    }
 }
 
-#wrap.portrait-only #debug-stats {
-    display: none;
-}
+/* height constrained */
+@media (max-width: 250px) and (min-aspect-ratio: 26 / 20),
+(max-height: 200px) and (min-aspect-ratio: 26 / 20) {
+    .game-player {
+        height: 100vh;
+        width: calc((26 / 20) * 100vh);
+    }
 
-#wrap.portrait-only .game-player {
-    height: 100vh;
-    width: calc((26 / 20) * 100vh);
+    html {
+        /* font-size: calc((26 / 20) * 4.5vh); */
+        /* calc + vw/vh + font-size is buggy in Safari */
+        font-size: 5.85vh;
+    }
 }
-
 
 /** zune skin **/
 #wrap.zune #game-buttons-container,
