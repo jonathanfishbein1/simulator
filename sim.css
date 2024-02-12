@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0 !important;
 
     /* needed to fix buggy vw/vh behavior in safari:
@@ -11,15 +12,15 @@ html, body {
 body {
     font-size: 0.75rem;
     color: white;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 #wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    --sim-background-color: #249ca3;
-    --sim-button-stroke: #397382;
+    --sim-background-color: #000000;
+    --sim-button-stroke: #000000;
     --sim-text-color: #cecece;
     --sim-button-fill: #333;
     --sim-dpad-fill: var(--sim-button-stroke);
@@ -27,17 +28,17 @@ body {
 }
 
 .sprite {
-    fill:yellow;
-    stroke:#ccc;
+    fill: yellow;
+    stroke: #ccc;
     stroke-width: 0.1875rem;
 }
 
 canvas {
-	image-rendering: optimizeSpeed;
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: optimize-contrast;
-	image-rendering: pixelated;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
     -ms-interpolation-mode: nearest-neighbor;
 }
 
@@ -91,19 +92,29 @@ canvas {
     color: #333;
     font-size: 0.6875rem;
     z-index: 5;
-    -webkit-user-select: none; /* Safari 3.1+ */
-    -moz-user-select: none; /* Firefox 2+ */
-    -ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari 3.1+ */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Standard syntax */
 }
 
 .no-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                     not supported by any browser */
 }
 
@@ -174,7 +185,7 @@ canvas {
     justify-content: center;
 
     clip-path: polygon(0% 0.5rem, 0.5rem 0%, calc(100% - 0.5rem) 0%, 100% 0.5rem,
-        100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0.5rem 100%, 0 calc(100% - 0.5rem));
+            100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0.5rem 100%, 0 calc(100% - 0.5rem));
 }
 
 .game-player.no-padding .game-embed {
@@ -236,11 +247,13 @@ canvas {
 .game-sys-button.game-reset-button {
     padding: 0.25rem 0.4rem;
 }
+
 .game-sys-button.game-menu-button {
     margin-right: 0.25rem;
 }
 
-.game-reset-button:active, .game-menu-button:active {
+.game-reset-button:active,
+.game-menu-button:active {
     background-color: var(--sim-background-color);
 }
 
@@ -250,7 +263,8 @@ canvas {
     content: "\f021";
 }
 
-.game-player-logo, .game-player-msft {
+.game-player-logo,
+.game-player-msft {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -366,7 +380,9 @@ canvas {
 }
 
 
-.blur .game-joystick, .blur .game-buttons, .blur .game-sys-button {
+.blur .game-joystick,
+.blur .game-buttons,
+.blur .game-sys-button {
     opacity: 0.3;
 }
 
@@ -382,9 +398,11 @@ canvas {
     width: 100vw;
     height: calc((20 / 17) * 100vw);
 }
+
 html {
     font-size: 4.5vw;
 }
+
 /* height constrained */
 @media (min-aspect-ratio: 17 / 20) {
     .game-player {
@@ -402,11 +420,12 @@ html {
         font-size: 3.825vh;
     }
 }
+
 /*
 ===== Landscape view
 (always height constrained)
 */
-@media (min-aspect-ratio: 5/3) and (min-width: 250px) and (min-height: 200px)  {
+@media (min-aspect-ratio: 5/3) and (min-width: 250px) and (min-height: 200px) {
     #wrap:not(.portrait-only) .game-player {
         width: 100%;
         height: 100%;
@@ -434,9 +453,11 @@ html {
         display: flex;
         align-items: center;
     }
+
     #wrap:not(.portrait-only) #game-screen {
         object-position: unset;
     }
+
     #wrap:not(.portrait-only) .game-player-background {
         height: 0px;
     }
@@ -458,7 +479,7 @@ html {
 ===== Landscape view
 (always height constrained)
 */
-@media (min-aspect-ratio: 2/1) and (min-width: 250px) and (min-height: 200px)  {
+@media (min-aspect-ratio: 2/1) and (min-width: 250px) and (min-height: 200px) {
     #wrap:not(.portrait-only) .game-sys-button-group {
         flex-direction: row;
         left: calc(50% + 100vh - 32vh);
@@ -467,22 +488,30 @@ html {
 }
 
 @media (min-aspect-ratio: 2/1) and (max-height: 300px) {
+
     /* hide controls */
-    #wrap.portrait-only .game-player-msft, #wrap.portrait-only .game-buttons, #wrap.portrait-only .game-joystick, #wrap.portrait-only .game-sys-button {
+    #wrap.portrait-only .game-player-msft,
+    #wrap.portrait-only .game-buttons,
+    #wrap.portrait-only .game-joystick,
+    #wrap.portrait-only .game-sys-button {
         display: none;
     }
+
     #wrap.portrait-only .game-embed {
         width: calc(100% - 2rem);
         height: calc(100% - 2rem);
         flex-grow: unset;
         padding-bottom: 0;
     }
+
     #wrap.portrait-only .game-player-background {
         height: 0;
     }
+
     #wrap.portrait-only #debug-stats {
         display: none;
     }
+
     #wrap.portrait-only .game-player {
         height: 100vh;
         width: calc((26 / 20) * 100vh);
@@ -492,39 +521,47 @@ html {
 /*
 ===== Mini view (no controls)
 */
-@media
-(max-width: 250px),
+@media (max-width: 250px),
 (max-height: 200px) {
+
     /* hide controls */
-    .game-player-msft, .game-buttons, .game-joystick, .game-sys-button {
+    .game-player-msft,
+    .game-buttons,
+    .game-joystick,
+    .game-sys-button {
         display: none;
     }
+
     .game-embed {
         width: calc(100% - 2rem);
         height: calc(100% - 2rem);
         flex-grow: unset;
         padding-bottom: 0;
     }
+
     .game-player-background {
-        height:0;
+        height: 0;
     }
+
     #debug-stats {
         display: none;
     }
+
     /* width constrained */
     .game-player {
         width: 100vw;
         height: calc((20 / 26) * 100vw);
     }
 }
+
 /* height constrained */
-@media
-(max-width: 250px) and (min-aspect-ratio: 26 / 20),
+@media (max-width: 250px) and (min-aspect-ratio: 26 / 20),
 (max-height: 200px) and (min-aspect-ratio: 26 / 20) {
     .game-player {
         height: 100vh;
         width: calc((26 / 20) * 100vh);
     }
+
     html {
         /* font-size: calc((26 / 20) * 4.5vh); */
         /* calc + vw/vh + font-size is buggy in Safari */
@@ -539,15 +576,18 @@ html {
     max-width: unset;
     height: 28%;
 }
+
 #wrap.zune .game-sys-button-group {
     left: 0.5rem;
     width: calc(100% - 1rem);
     justify-content: space-between;
 }
+
 #wrap.zune #joystick-container {
     left: 50%;
     transform: translateX(-50%);
 }
+
 #wrap.zune .game-player-msft,
 #wrap.junior .game-player-msft {
     left: 2em;
