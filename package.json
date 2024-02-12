@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build-desktop": "cp ./index-desktop.html ./build/index.html && cp ./fleek.config-desktop.json ./build/fleek.config.json && cp ./icons.css ./build && cp ./pxtsim.js ./build && cp ./sim.js ./build && cp ./sim.css ./build",
-    "build-mobile": "cp ./index-mobile.html ./build/index.html && cp ./fleek.config-mobile.json ./build/fleek.config.json && cp ./icons.css ./build && cp ./pxtsim.js ./build && cp ./sim.js ./build && cp ./sim.css ./build"
+    "build-desktop": "cp ./index-desktop.html ./build/desktop/index.html && cp ./fleek.config-desktop.json ./build/desktop/fleek.config.json && cp ./icons.css ./build/desktop && cp ./pxtsim.js ./build/desktop && cp ./sim.js ./build/desktop && cp ./sim.css ./build/desktop",
+    "build-mobile": "cp ./index-mobile.html ./build/mobile/index.html && cp ./fleek.config-mobile.json ./build/mobile/fleek.config.json && cp ./icons.css ./build/mobile && cp ./pxtsim.js ./build/mobile && cp ./sim.js ./build/mobile && cp ./sim.css ./build/mobile"
   },
   "dependencies": {
     "@fleekxyz/cli": "0.7.4-staging.1"
