@@ -5,11 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build-desktop": "cp ./index-desktop.html ./build/index.html && cp ./fleek.config-desktop.json ./build/fleek.config.json && cp ./icons.css ./build && cp ./pxtsim.js ./build && cp ./sim.js ./build && cp ./sim.css ./build",
-    "build-mobile": "cp ./index-mobile.html ./build/index.html && cp ./fleek.config-mobile.json ./build/fleek.config.json && cp ./icons.css ./build && cp ./pxtsim.js ./build && cp ./sim.js ./build && cp ./sim.css ./build/sim.css"
+    "build-mobile": "cp ./index-mobile.html ./build/index.html && cp ./fleek.config-mobile.json ./build/fleek.config.json && cp ./icons.css ./build && cp ./pxtsim.js ./build && cp ./sim.js ./build && cp ./sim.css ./build"
   },
   "dependencies": {
-    "@fleekxyz/cli": "^0.7.3",
-    "@types/node": "^20.11.16",
-    "typescript": "^5.3.3"
+    "@fleekxyz/cli": "0.7.4-staging.1"
   }
 }

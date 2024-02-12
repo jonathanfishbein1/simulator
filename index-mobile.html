@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Microsoft MakeCode Arcade Simulator</title>
     <link rel="stylesheet" type="text/css" href="./sim.css">
     <link rel="stylesheet" type="text/css" href="./icons.css">
     <style>
@@ -92,12 +93,24 @@
 <body id="root">
     <div id="wrap">
         <div class="game-player">
+            <div style="display:none" id="debug-stats"></div>
             <div class="game-embed">
                 <canvas id="game-screen" class="hidden" tabindex="0" role="application"></canvas>
+            </div>
+            <div style="display:none" class="game-sys-button-group">
+                <button class="game-sys-button game-menu-button no-select">Menu</button>
+                <button class="game-sys-button game-reset-button no-select">
+                    <i>
+                    </i>
+                </button>
             </div>
             <div id="game-buttons-container" class="game-buttons">
                 <svg xmlns="http://www.w3.org/2000/svg" class="game-button-svg" viewBox="0 0 40 40" width="200px"
                     height="200px">
+                    <circle style="display:none" class="button-b" cx="13" cy="28" r="9" fill="var(--sim-button-fill)"
+                        stroke="var(--sim-button-stroke)" stroke-width="2.5" />
+                    <text style="display:none" class="label-b no-select" x="13" y="28" text-anchor="middle" dy="2.5"
+                        font-size="8">B</text>
                     <circle class="button-a" cx="28" cy="12.5" r="9" fill="var(--sim-button-fill)"
                         stroke="var(--sim-button-stroke)" stroke-width="2.5" />
                     <text class="label-a no-select" x="28" y="12.5" text-anchor="middle" dy="2.5" font-size="8">A</text>
@@ -123,6 +136,7 @@
             </div>
             <div class="game-player-background">
             </div>
+            <div style="display:none" class="game-player-msft"></div>
         </div>
         <div id="safari-enable-game" style="display: none">
             <div class="safari-enable-game-body">

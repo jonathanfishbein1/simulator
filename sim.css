@@ -73,8 +73,8 @@ canvas {
 
 #paint-surface.borders {
     /* filter: drop-shadow(0px 0px 0.625rem #6B4F76) */
-    border-right: 0.5rem inset #2f99a1;
-    border-left: 0.5rem outset #2f99a1;
+    border-right: 0.5rem inset #000000;
+    border-left: 0.5rem outset #000000;
     border-top: 0.5rem outset #f290c1;
     border-bottom: 0.5rem inset #f290c1;
 }
